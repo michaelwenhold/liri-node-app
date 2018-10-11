@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/michaelwenhold/liri-node-app/issues"
   },
-  "homepage": "https://github.com/michaelwenhold/liri-node-app#readme"
+  "homepage": "https://github.com/michaelwenhold/liri-node-app#readme",
+  "dependencies": {
+    "omdb-client": "^2.0.0"
+  }
 }
