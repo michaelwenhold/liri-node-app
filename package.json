@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/michaelwenhold/liri-node-app#readme",
   "dependencies": {
+    "node-spotify-api": "^1.0.7",
     "omdb-client": "^2.0.0"
   }
 }

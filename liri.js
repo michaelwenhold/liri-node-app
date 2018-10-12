@@ -1,9 +1,33 @@
 //Set any environment variables with the dotenv package
-js
 require("dotenv").config();
 
 //Import from keys.js file
 let keys = require("./keys.js");
+
+//Spotify key from NPM
+let spotify = require('node-spotify-api');
+
+
+
+ 
+//var spotify = new Spotify({
+//  id: <your spotify client id>,
+//  secret: <your spotify client secret>
+//});
+ 
+//spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
+ // if (err) {
+ //   return console.log('Error occurred: ' + err);
+ // }
+ 
+//console.log(data); 
+//});
+
+
+
+
+
+
 
 //Access the keys information
 //EXAMPLE #8 on instructions
@@ -16,14 +40,3 @@ let keys = require("./keys.js");
 //spotify-this-song
 //movie-this
 //do-what-it-says
-
-let omdbApi = require('omdb-client');
- 
-let params = {
-    apiKey: "https://www.omdbapi.com/?t=" + movieTitles + "&plot=short&apikey=trilogy",
-    title: 'Terminator',
-    year: 2012
-}
-omdbApi.get(params, function(err, data) {
-    // process response...
-});
