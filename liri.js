@@ -5,33 +5,32 @@ require("dotenv").config();
 let keys = require("./keys.js");
 
 //Spotify key from NPM
-let spotify = require('node-spotify-api');
+let Spotify = require('node-spotify-api');
+
+//Get API key from .env
+let spotify = new Spotify(keys.spotify)
+
+// Load the fs package
+let fs = require("fs");
 
 
 
- 
-//var spotify = new Spotify({
-//  id: <your spotify client id>,
-//  secret: <your spotify client secret>
-//});
- 
-//spotify.search({ type: 'track', query: 'All the Small Things' }, function(err, data) {
- // if (err) {
- //   return console.log('Error occurred: ' + err);
- // }
- 
-//console.log(data); 
-//});
+//Function for Spotify song search
+function song(song) {
+    spotify.search({ type: 'track', query: 'All the Small Things' }, function (err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        }
+        console.log(data);
+    });
 
-
-
+};
 
 
 
 
 //Access the keys information
 //EXAMPLE #8 on instructions
-//let spotify = new spotify(keys.spotify);
 //let movieKey = keys.omdb.api_key;
 
 
