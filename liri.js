@@ -17,11 +17,21 @@ let fs = require("fs");
 
 //Function for Spotify song search
 function song(song) {
-    spotify.search({ type: 'track', query: 'All the Small Things' }, function (err, data) {
+    spotify.search({ type: 'track', query: song }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
-        console.log(data);
+        let results = data.tracks.items
+
+        for (let i = 0; i < results.length; i++) {
+            let info = (
+                "\nArtists: " + results[i].artists[0].name +
+                "\nSong: " + track[i].name +
+                "\nSample: " + track[i].preview_url +
+                "\nAlbum: " + track[i].album.name 
+            )
+            console.log(info)
+        }
     });
 
 };
