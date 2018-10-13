@@ -35,7 +35,7 @@ switch (action) {
 
 //Function for Spotify song search
 function song(song) {
-    spotify.search({ type: 'track', query: song }, function (err, data) {
+    spotify.search({ type: "track", query: song }, function (err, data) {
         if (err) {
             return console.log('Error occurred: ' + err);
         }
@@ -44,9 +44,9 @@ function song(song) {
         for (let i = 0; i < results.length; i++) {
             let info = (
                 "\nArtists: " + results[i].artists[0].name +
-                "\nSong: " + track[i].name +
-                "\nSample: " + track[i].preview_url +
-                "\nAlbum: " + track[i].album.name
+                "\nSong: " + results[i].name +
+                "\nSample: " + results[i].preview_url +
+                "\nAlbum: " + results[i].album.name
             )
             console.log(info)
         }
