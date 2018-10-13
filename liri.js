@@ -23,8 +23,14 @@ let value = process.argv[3];
 // The switch-case will direct which function gets run.
 switch (action) {
     case "spotify-this-song":
-      song();
-      break;
+        if (value === null) {
+            console.log("You need to enter a song title.");
+        }
+        else {
+            song(value);
+        }
+
+        break;
 }
 
 //Function for Spotify song search
@@ -40,7 +46,7 @@ function song(song) {
                 "\nArtists: " + results[i].artists[0].name +
                 "\nSong: " + track[i].name +
                 "\nSample: " + track[i].preview_url +
-                "\nAlbum: " + track[i].album.name 
+                "\nAlbum: " + track[i].album.name
             )
             console.log(info)
         }
