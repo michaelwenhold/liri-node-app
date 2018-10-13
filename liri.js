@@ -13,7 +13,19 @@ let spotify = new Spotify(keys.spotify)
 // Load the fs package
 let fs = require("fs");
 
+// Take two arguments.
+// The first will be the action (i.e. "spotify-this-song")
+// The second will be the value (i.e. "name of the song being searched for")
+let action = process.argv[2];
+let value = process.argv[3];
 
+
+// The switch-case will direct which function gets run.
+switch (action) {
+    case "spotify-this-song":
+      song();
+      break;
+}
 
 //Function for Spotify song search
 function song(song) {
@@ -35,17 +47,3 @@ function song(song) {
     });
 
 };
-
-
-
-
-//Access the keys information
-//EXAMPLE #8 on instructions
-//let movieKey = keys.omdb.api_key;
-
-
-//#9 Make it so liri.js can take in one of these commands
-//concert-this
-//spotify-this-song
-//movie-this
-//do-what-it-says
